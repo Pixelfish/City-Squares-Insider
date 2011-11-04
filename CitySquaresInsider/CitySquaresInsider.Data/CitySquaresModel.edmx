@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CitySquaresModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CitySquaresModelStoreContainer">
+          <EntitySet Name="Addresses" EntityType="CitySquaresModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AppTokens" EntityType="CitySquaresModel.Store.AppTokens" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConsumerFBData" EntityType="CitySquaresModel.Store.ConsumerFBData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Consumers" EntityType="CitySquaresModel.Store.Consumers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Deals" EntityType="CitySquaresModel.Store.Deals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FacebookData" EntityType="CitySquaresModel.Store.FacebookData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Merchants" EntityType="CitySquaresModel.Store.Merchants" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentStatuses" EntityType="CitySquaresModel.Store.PaymentStatuses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Phones" EntityType="CitySquaresModel.Store.Phones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vouchers" EntityType="CitySquaresModel.Store.Vouchers" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="DealID" Association="CitySquaresModel.Store.DealID">
+            <End Role="Deals" EntitySet="Deals" />
+            <End Role="Vouchers" EntitySet="Vouchers" />
+          </AssociationSet>
+          <AssociationSet Name="MerchantID" Association="CitySquaresModel.Store.MerchantID">
+            <End Role="Merchants" EntitySet="Merchants" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Address2" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="State" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Zip" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AppTokens">
+          <Key>
+            <PropertyRef Name="AppTokenID" />
+          </Key>
+          <Property Name="AppTokenID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Token" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ConsumerFBData">
+          <Key>
+            <PropertyRef Name="ConsumerID" />
+            <PropertyRef Name="FBDataID" />
+          </Key>
+          <Property Name="ConsumerID" Type="bigint" Nullable="false" />
+          <Property Name="FBDataID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Consumers">
+          <Key>
+            <PropertyRef Name="ConsumersID" />
+          </Key>
+          <Property Name="ConsumersID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="FacebookID" Type="bigint" Nullable="false" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" />
+          <Property Name="LastLoggedIn" Type="datetime" Nullable="false" />
+          <Property Name="AddressID" Type="bigint" />
+          <Property Name="PhoneID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Deals">
+          <Key>
+            <PropertyRef Name="DealID" />
+          </Key>
+          <Property Name="DealID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NormalCost" Type="money" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Nullable="false" Precision="2" />
+          <Property Name="MonthlyCost" Type="money" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" />
+          <Property Name="Description" Type="varchar" MaxLength="2000" />
+          <Property Name="Commission" Type="decimal" Nullable="false" Precision="2" />
+          <Property Name="VouchersPerPeriod" Type="decimal" Nullable="false" Precision="4" />
+          <Property Name="MerchantID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacebookData">
+          <Key>
+            <PropertyRef Name="FBDataID" />
+          </Key>
+          <Property Name="FBDataID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FieldName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Value" Type="varchar" MaxLength="3000" />
+        </EntityType>
+        <EntityType Name="Merchants">
+          <Key>
+            <PropertyRef Name="MerchantID" />
+          </Key>
+          <Property Name="MerchantID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessName" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="BizAddressID" Type="bigint" Nullable="false" />
+          <Property Name="BizPhoneID" Type="bigint" Nullable="false" />
+          <Property Name="ContactName" Type="varchar" MaxLength="300" />
+          <Property Name="ContactPhoneID" Type="bigint" />
+          <Property Name="AltPhoneID" Type="bigint" />
+          <Property Name="PaymentAddrID" Type="bigint" />
+          <Property Name="BizURL" Type="varchar" MaxLength="400" />
+          <Property Name="FacebookID" Type="bigint" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" />
+          <Property Name="LastLoggedIn" Type="datetime" />
+          <Property Name="BizEmail" Type="varchar" MaxLength="300" />
+          <Property Name="ContactEmail" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="PaymentStatuses">
+          <Key>
+            <PropertyRef Name="PaymentStatusID" />
+          </Key>
+          <Property Name="PaymentStatusID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerID" Type="bigint" Nullable="false" />
+          <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+          <Property Name="VoucherID" Type="bigint" Nullable="false" />
+          <Property Name="PaymentType" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Phones">
+          <Key>
+            <PropertyRef Name="PhoneID" />
+          </Key>
+          <Property Name="PhoneID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PhoneType" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'ConsumerID' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      warning 6035: The relationship 'ConsumerID1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="Vouchers">
+          <Key>
+            <PropertyRef Name="VoucherID" />
+          </Key>
+          <Property Name="VoucherID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerID" Type="bigint" Nullable="false" />
+          <Property Name="DealID" Type="bigint" Nullable="false" />
+          <Property Name="Used" Type="bit" Nullable="false" />
+          <Property Name="DateUsed" Type="datetime" />
+          <Property Name="DatePurchased" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="DealID">
+          <End Role="Deals" Type="CitySquaresModel.Store.Deals" Multiplicity="1" />
+          <End Role="Vouchers" Type="CitySquaresModel.Store.Vouchers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deals">
+              <PropertyRef Name="DealID" />
+            </Principal>
+            <Dependent Role="Vouchers">
+              <PropertyRef Name="DealID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MerchantID">
+          <End Role="Merchants" Type="CitySquaresModel.Store.Merchants" Multiplicity="1" />
+          <End Role="Deals" Type="CitySquaresModel.Store.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Merchants">
+              <PropertyRef Name="MerchantID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="MerchantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CitySquaresModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CitySquaresModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="CitySquaresModel.Address" />
+          <EntitySet Name="ConsumerFBDatas" EntityType="CitySquaresModel.ConsumerFBData" />
+          <EntitySet Name="Consumers" EntityType="CitySquaresModel.Consumer" />
+          <EntitySet Name="Deals" EntityType="CitySquaresModel.Deal" />
+          <EntitySet Name="FacebookDatas" EntityType="CitySquaresModel.FacebookData" />
+          <EntitySet Name="Merchants" EntityType="CitySquaresModel.Merchant" />
+          <EntitySet Name="PaymentStatuses" EntityType="CitySquaresModel.PaymentStatus" />
+          <EntitySet Name="Phones" EntityType="CitySquaresModel.Phone" />
+          <EntitySet Name="Vouchers" EntityType="CitySquaresModel.Voucher" />
+          <AssociationSet Name="DealID" Association="CitySquaresModel.DealID">
+            <End Role="Deal" EntitySet="Deals" />
+            <End Role="Voucher" EntitySet="Vouchers" />
+          </AssociationSet>
+          <AssociationSet Name="MerchantID" Association="CitySquaresModel.MerchantID">
+            <End Role="Merchant" EntitySet="Merchants" />
+            <End Role="Deal" EntitySet="Deals" />
+          </AssociationSet>
+          <EntitySet Name="AppTokens" EntityType="CitySquaresModel.AppToken" />
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Type="Int64" Name="AddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Zip" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ConsumerFBData">
+          <Key>
+            <PropertyRef Name="ConsumerID" />
+            <PropertyRef Name="FBDataID" />
+          </Key>
+          <Property Type="Int64" Name="ConsumerID" Nullable="false" />
+          <Property Type="Int64" Name="FBDataID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Consumer">
+          <Key>
+            <PropertyRef Name="ConsumersID" />
+          </Key>
+          <Property Type="Int64" Name="ConsumersID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="FacebookID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateUpdated" />
+          <Property Type="DateTime" Name="LastLoggedIn" Nullable="false" />
+          <Property Type="Int64" Name="AddressID" />
+          <Property Type="Int64" Name="PhoneID" />
+        </EntityType>
+        <EntityType Name="Deal">
+          <Key>
+            <PropertyRef Name="DealID" />
+          </Key>
+          <Property Type="Int64" Name="DealID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="NormalCost" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="MonthlyCost" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Title" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Commission" Nullable="false" Precision="2" Scale="0" />
+          <Property Type="Decimal" Name="VouchersPerPeriod" Nullable="false" Precision="4" Scale="0" />
+          <Property Type="Int64" Name="MerchantID" Nullable="false" />
+          <NavigationProperty Name="Vouchers" Relationship="CitySquaresModel.DealID" FromRole="Deal" ToRole="Voucher" />
+          <NavigationProperty Name="Merchant" Relationship="CitySquaresModel.MerchantID" FromRole="Deal" ToRole="Merchant" />
+        </EntityType>
+        <EntityType Name="FacebookData">
+          <Key>
+            <PropertyRef Name="FBDataID" />
+          </Key>
+          <Property Type="Int64" Name="FBDataID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FieldName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="3000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Merchant">
+          <Key>
+            <PropertyRef Name="MerchantID" />
+          </Key>
+          <Property Type="Int64" Name="MerchantID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BusinessName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="BizAddressID" Nullable="false" />
+          <Property Type="Int64" Name="BizPhoneID" Nullable="false" />
+          <Property Type="String" Name="ContactName" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ContactPhoneID" />
+          <Property Type="Int64" Name="AltPhoneID" />
+          <Property Type="Int64" Name="PaymentAddrID" />
+          <Property Type="String" Name="BizURL" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="FacebookID" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateUpdated" />
+          <Property Type="DateTime" Name="LastLoggedIn" />
+          <Property Type="String" Name="BizEmail" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactEmail" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Deals" Relationship="CitySquaresModel.MerchantID" FromRole="Merchant" ToRole="Deal" />
+        </EntityType>
+        <EntityType Name="PaymentStatus">
+          <Key>
+            <PropertyRef Name="PaymentStatusID" />
+          </Key>
+          <Property Type="Int64" Name="PaymentStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ConsumerID" Nullable="false" />
+          <Property Type="String" Name="TransactionID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="VoucherID" Nullable="false" />
+          <Property Type="Int32" Name="PaymentType" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Phone">
+          <Key>
+            <PropertyRef Name="PhoneID" />
+          </Key>
+          <Property Type="Int64" Name="PhoneID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Phone1" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PhoneType" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Voucher">
+          <Key>
+            <PropertyRef Name="VoucherID" />
+          </Key>
+          <Property Type="Int64" Name="VoucherID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ConsumerID" Nullable="false" />
+          <Property Type="Int64" Name="DealID" Nullable="false" />
+          <Property Type="Boolean" Name="Used" Nullable="false" />
+          <Property Type="DateTime" Name="DateUsed" />
+          <Property Type="DateTime" Name="DatePurchased" Nullable="false" />
+          <NavigationProperty Name="Deal" Relationship="CitySquaresModel.DealID" FromRole="Voucher" ToRole="Deal" />
+        </EntityType>
+        <Association Name="DealID">
+          <End Type="CitySquaresModel.Deal" Role="Deal" Multiplicity="1" />
+          <End Type="CitySquaresModel.Voucher" Role="Voucher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deal">
+              <PropertyRef Name="DealID" />
+            </Principal>
+            <Dependent Role="Voucher">
+              <PropertyRef Name="DealID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MerchantID">
+          <End Type="CitySquaresModel.Merchant" Role="Merchant" Multiplicity="1" />
+          <End Type="CitySquaresModel.Deal" Role="Deal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Merchant">
+              <PropertyRef Name="MerchantID" />
+            </Principal>
+            <Dependent Role="Deal">
+              <PropertyRef Name="MerchantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AppToken">
+          <Key>
+            <PropertyRef Name="AppTokenID" />
+          </Key>
+          <Property Type="Int32" Name="AppTokenID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Label" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Token" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CitySquaresModel" />
+        <Alias Key="Target" Value="CitySquaresModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CitySquaresModelContainer" StorageEntityContainer="CitySquaresModelStoreContainer">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="CitySquaresModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsumerFBDatas">
+            <EntityTypeMapping TypeName="CitySquaresModel.ConsumerFBData">
+              <MappingFragment StoreEntitySet="ConsumerFBData">
+                <ScalarProperty Name="FBDataID" ColumnName="FBDataID" />
+                <ScalarProperty Name="ConsumerID" ColumnName="ConsumerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consumers">
+            <EntityTypeMapping TypeName="CitySquaresModel.Consumer">
+              <MappingFragment StoreEntitySet="Consumers">
+                <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="LastLoggedIn" ColumnName="LastLoggedIn" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ConsumersID" ColumnName="ConsumersID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deals">
+            <EntityTypeMapping TypeName="CitySquaresModel.Deal">
+              <MappingFragment StoreEntitySet="Deals">
+                <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+                <ScalarProperty Name="VouchersPerPeriod" ColumnName="VouchersPerPeriod" />
+                <ScalarProperty Name="Commission" ColumnName="Commission" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MonthlyCost" ColumnName="MonthlyCost" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="NormalCost" ColumnName="NormalCost" />
+                <ScalarProperty Name="DealID" ColumnName="DealID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacebookDatas">
+            <EntityTypeMapping TypeName="CitySquaresModel.FacebookData">
+              <MappingFragment StoreEntitySet="FacebookData">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="FBDataID" ColumnName="FBDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Merchants">
+            <EntityTypeMapping TypeName="CitySquaresModel.Merchant">
+              <MappingFragment StoreEntitySet="Merchants">
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="BizEmail" ColumnName="BizEmail" />
+                <ScalarProperty Name="LastLoggedIn" ColumnName="LastLoggedIn" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="BizURL" ColumnName="BizURL" />
+                <ScalarProperty Name="PaymentAddrID" ColumnName="PaymentAddrID" />
+                <ScalarProperty Name="AltPhoneID" ColumnName="AltPhoneID" />
+                <ScalarProperty Name="ContactPhoneID" ColumnName="ContactPhoneID" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="BizPhoneID" ColumnName="BizPhoneID" />
+                <ScalarProperty Name="BizAddressID" ColumnName="BizAddressID" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="MerchantID" ColumnName="MerchantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentStatuses">
+            <EntityTypeMapping TypeName="CitySquaresModel.PaymentStatus">
+              <MappingFragment StoreEntitySet="PaymentStatuses">
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ConsumerID" ColumnName="ConsumerID" />
+                <ScalarProperty Name="PaymentStatusID" ColumnName="PaymentStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Phones">
+            <EntityTypeMapping TypeName="CitySquaresModel.Phone">
+              <MappingFragment StoreEntitySet="Phones">
+                <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone" />
+                <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vouchers">
+            <EntityTypeMapping TypeName="CitySquaresModel.Voucher">
+              <MappingFragment StoreEntitySet="Vouchers">
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+                <ScalarProperty Name="Used" ColumnName="Used" />
+                <ScalarProperty Name="DealID" ColumnName="DealID" />
+                <ScalarProperty Name="ConsumerID" ColumnName="ConsumerID" />
+                <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppTokens">
+            <EntityTypeMapping TypeName="CitySquaresModel.AppToken">
+              <MappingFragment StoreEntitySet="AppTokens">
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="AppTokenID" ColumnName="AppTokenID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CitySquaresModel" >
+        <EntityTypeShape EntityType="CitySquaresModel.Address" Width="1.5" PointX="2.75" PointY="5.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="CitySquaresModel.ConsumerFBData" Width="1.5" PointX="4.75" PointY="5.75" Height="1.4033821614583335" />
+        <EntityTypeShape EntityType="CitySquaresModel.Consumer" Width="1.5" PointX="6.75" PointY="5.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="CitySquaresModel.Deal" Width="1.5" PointX="3" PointY="1.5" Height="3.1340950520833335" />
+        <EntityTypeShape EntityType="CitySquaresModel.FacebookData" Width="1.5" PointX="7.75" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="CitySquaresModel.Merchant" Width="1.5" PointX="0.75" PointY="1" Height="4.0956022135416656" />
+        <EntityTypeShape EntityType="CitySquaresModel.PaymentStatus" Width="1.5" PointX="0.75" PointY="8.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="CitySquaresModel.Phone" Width="1.5" PointX="2.75" PointY="8.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="CitySquaresModel.Voucher" Width="1.5" PointX="5.25" PointY="1.875" Height="2.3648893229166674" />
+        <AssociationConnector Association="CitySquaresModel.DealID" >
+          <ConnectorPoint PointX="4.5" PointY="3.0574446614583337" />
+          <ConnectorPoint PointX="5.25" PointY="3.0574446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CitySquaresModel.MerchantID" >
+          <ConnectorPoint PointX="2.25" PointY="3.0670475260416667" />
+          <ConnectorPoint PointX="3" PointY="3.0670475260416667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CitySquaresModel.AppToken" Width="1.5" PointX="9.375" PointY="3.75" Height="1.5956835937499996" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

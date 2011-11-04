@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="FEB82164-B706-46F6-8D81-E96187E159AB" ModuleId="CitySquaresInsider.Web" />
+  <Module PersistentId="D8F87A66-A21D-48BB-B992-B3D1154338FD" ModuleId="CitySquaresInsider.Data" />
+</Modules>

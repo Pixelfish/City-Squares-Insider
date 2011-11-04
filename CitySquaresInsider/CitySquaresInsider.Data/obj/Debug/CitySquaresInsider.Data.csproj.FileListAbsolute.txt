@@ -1,0 +1,5 @@
+D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Data\bin\Debug\CitySquaresInsider.Data.dll
+D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Data\bin\Debug\CitySquaresInsider.Data.pdb
+D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Data\obj\Debug\CitySquaresInsider.Data.dll
+D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Data\obj\Debug\CitySquaresInsider.Data.pdb
