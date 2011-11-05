@@ -1,0 +1,93 @@
+﻿body
+{
+}
+
+a
+{
+    color: #00AEDD;
+    text-decoration: none;
+}
+a:visited
+{
+    color: #00AEDD;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #006884;
+    text-decoration: none;
+}
+
+
+img
+{
+    margin-top: 8px;
+}
+
+#wrapper
+{
+    font-family: Arial, helvetica, Sans-Serif;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    position: relative;
+    padding: 25px;
+    width: 470px;
+    height: 600px;
+    background: #000 url('../images/ConsumerLogin_mainbg.jpg') no-repeat 0px 70px;
+}
+
+
+#CSIlogo
+{
+    background: url('../images/CSIlogo.png') no-repeat top left;
+    width: 315px;
+    height: 35px;
+}
+
+#LoginTagline
+{
+    position: absolute;
+    top: 66px;
+    left: 0px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+#LoginWelcome
+{
+    font-size: 13pt;
+    padding: 15px;
+    position: absolute;
+    top: 350px;
+    left: 0px;
+    color: #fff;
+    width: 260px;
+    height: 122px;
+}
+
+#fblogin
+{
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 15px;
+    position: absolute;
+    top: 365px;
+    right: 0px;
+    color: #fff;
+    background: url('../images/fbloginbg.png') no-repeat 0px 0px;
+    width: 200px;
+    height: 100px;
+}
+
+#LoginFooter
+{
+    font-size: 13pt;
+    padding: 15px;
+    position: absolute;
+    top: 550px;
+    left: 0px;
+    color: #fff;
+    width: 300px;
+    height: 122px;
+}
