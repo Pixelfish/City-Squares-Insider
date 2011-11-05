@@ -1,9 +1,43 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:Default.aspx" caret="549" fromTop="12" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Site.css" caret="0" fromTop="0" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="508" fromTop="10" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="169" fromTop="0" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerIndex.aspx" caret="711" fromTop="13" />
     </RecentFiles>
-    <RecentEdits />
+    <RecentEdits>
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1393" fromTop="18" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1393" fromTop="20" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1393" fromTop="12" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="15" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="31" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="11" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="28" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="30" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="5" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="24" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="18" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="10" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="9" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="6" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="11" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="8" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="17" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="28" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="16" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="21" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="21" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="1381" fromTop="9" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerLogin.aspx" caret="508" fromTop="10" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="1419" fromTop="11" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/d:Styles/f:Login.css" caret="0" fromTop="0" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerIndex.aspx" caret="1702" fromTop="30" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerIndex.aspx" caret="650" fromTop="11" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerIndex.aspx" caret="1280" fromTop="18" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerIndex.aspx" caret="1483" fromTop="26" />
+      <File id="FEB82164-B706-46F6-8D81-E96187E159AB/f:ConsumerIndex.aspx" caret="630" fromTop="10" />
+    </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
     <NAntPath value="" />
@@ -23,4 +57,43 @@
       <setting name="SolutionAnalysisEnabled">False</setting>
     </boolean>
   </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="AspCodeCompletionContext">
+      <Item value="div" priority="85" />
+      <Item value="id" priority="49" />
+      <Item value="style" priority="98" />
+      <Item value="width" priority="15" />
+      <Item value="wrapper" priority="48" />
+      <Item value="background" priority="19" />
+      <Item value="br" priority="41" />
+      <Item value="b" priority="27" />
+      <Item value="center" priority="27" />
+      <Item value="color" priority="7" />
+      <Item value="a" priority="20" />
+      <Item value="href" priority="13" />
+      <Item value="CitySquaresInsider.Web.csproj" priority="13" />
+      <Item value="img" priority="6" />
+      <Item value="src" priority="6" />
+      <Item value="margin" priority="9" />
+      <Item value="LandingBanner" priority="7" />
+      <Item value="&amp;AElig;" priority="11" />
+      <Item value="span" priority="13" />
+      <Item value="class" priority="6" />
+      <Item value="header" priority="6" />
+      <Item value="text-align" priority="9" />
+      <Item value="position" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="CssCodeCompletionContext">
+      <Item value="width" priority="1" />
+      <Item value="background" priority="1" />
+      <Item value="color" priority="0" />
+      <Item value="margin" priority="0" />
+      <Item value="border" priority="5" />
+      <Item value="text-align" priority="0" />
+      <Item value="position" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="HtmlEntityCodeCompletionContext">
+      <Item value="&amp;AElig;" priority="1" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
 </Configuration>

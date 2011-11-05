@@ -58,6 +58,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="ConsumerDashboard.aspx" />
     <Content Include="ConsumerIndex.aspx" />
+    <Content Include="ConsumerLogin.aspx" />
     <Content Include="ConsumerSignUp.aspx" />
     <Content Include="InsiderService.asmx" />
     <Content Include="Styles\Site.css" />
@@ -65,6 +66,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\Login.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -116,6 +118,13 @@
     <Compile Include="ConsumerIndex.aspx.designer.cs">
       <DependentUpon>ConsumerIndex.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsumerLogin.aspx.cs">
+      <DependentUpon>ConsumerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsumerLogin.aspx.designer.cs">
+      <DependentUpon>ConsumerLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsumerSignUp.aspx.cs">
       <DependentUpon>ConsumerSignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +151,7 @@
   <ItemGroup>
     <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />

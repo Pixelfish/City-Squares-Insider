@@ -5,3 +5,10 @@ D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySqu
 D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\obj\Debug\ResolveAssemblyReference.cache
 D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\obj\Debug\CitySquaresInsider.Web.dll
 D:\Users\Nick\Documents\Visual Studio 2010\Projects\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\obj\Debug\CitySquaresInsider.Web.pdb
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\bin\CitySquaresInsider.Web.dll
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\bin\CitySquaresInsider.Web.pdb
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\bin\CitySquaresInsider.Data.dll
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\bin\CitySquaresInsider.Data.pdb
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\obj\Debug\CitySquaresInsider.Web.dll
+C:\Users\rcondron\Desktop\CS INSIDER\City-Squares-Insider\CitySquaresInsider\CitySquaresInsider.Web\obj\Debug\CitySquaresInsider.Web.pdb
